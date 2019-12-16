@@ -3,7 +3,6 @@ import glob
 import json
 import os
 
-
 root_path = 'collections'
 
 if __name__ == '__main__':
@@ -12,6 +11,8 @@ if __name__ == '__main__':
         with open(f, 'r+') as jf:
           data = json.load(jf)
           if 'collection' in data.keys():
+            postman_id = data['collection']['info']['_postman_id']
+            os.rename(f, os.path.join(root_path, f'{postman_id}.json'))
             continue
 
           postman_id = data['info']['_postman_id']
