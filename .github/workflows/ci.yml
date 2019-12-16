@@ -3,12 +3,14 @@ name: CI
 on:
   pull_request:
     types: [closed]
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: jumpyoshim/postman-integration@master
+      - uses: actions/checkout@v1
       - name: Update collections
         run: ./bin/update_collections.sh
