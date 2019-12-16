@@ -9,5 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: jumpyoshim/postman-integration@master
       - name: Update collections
         run: ./bin/update_collections.sh
