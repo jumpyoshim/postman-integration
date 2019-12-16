@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source .env
-
 if [ -z "$POSTMAN_API_KEY" ]
 then
       echo "POSTMAN_API_KEY is empty"
