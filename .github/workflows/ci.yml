@@ -12,6 +12,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: "3.x"
+          architecture: "x64"
+      - name: Convert json
+        run: python ./bin/convert_json.py
       - name: Update collections
         run: ./bin/update_collections.sh
         env:
