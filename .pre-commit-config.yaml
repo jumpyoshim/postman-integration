@@ -6,9 +6,7 @@ repos:
       - id: check-json
       - id: end-of-file-fixer
       - id: trailing-whitespace
-  - repo: local
+  - repo: https://github.com/detailyang/pre-commit-shell
+    rev: v1.0.6
     hooks:
-      - id: convert-json
-        name: convert-json
-        entry: python3 convert_json.py
-        language: python
+      - id: shell-lint
