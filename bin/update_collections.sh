@@ -10,7 +10,7 @@ set -e
 FILES="/tmp/*"
 for f in $FILES
 do
-  ID=$(cmd "$f" | python3 -c "import sys, json; print(json.load(sys.stdin)['collection']['info']['_postman_id'])")
+  ID=$(cmd < "$f" | python3 -c "import sys, json; print(json.load(sys.stdin)['collection']['info']['_postman_id'])")
 
   curl --location --request PUT https://api.getpostman.com/collections/"$ID" \
   --header "Content-Type: application/json" \
